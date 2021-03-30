@@ -2,15 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-
-// .post-meta {
-//     background: #fff;
-//     text-align: left;
-//     font-weight: bold;
-//     padding: 10px;
-// }
-
-
 .feed {
   display: inline-block;
   border-color: #eee #ddd #bbb;
@@ -30,5 +21,18 @@
   font-weight: bold;
   line-height: 16px;
   text-align: center;
+  min-width: 300px;
+}
 
+#crud-icons a {
+  color: blue; 
+  text-decoration: none;
+  background-color: white;
+  padding: 3px 3px 3px 3px;
+}
+
+#crud-icons a:hover {
+  color: red; 
+  text-decoration: none;
+  background-color: white;
 }

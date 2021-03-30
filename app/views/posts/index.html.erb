@@ -8,16 +8,26 @@
       <div class="feed">
         <p class="feedposts"><%= post.content %><br>
           <%= post.created_at.to_s(:time) %><br>
-          <%= link_to 'Show', post %>
-          <%= link_to 'Edit', edit_post_path(post) %>
-          <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+          
+          <div id='crud-icons'>
+            <%= link_to post do %>
+              <i class="far fa-eye"></i>
+            <% end %>
+          
+          
+          
+            <%= link_to edit_post_path(post) do %>
+              <i class="far fa-edit"></i>
+            <% end %>
+          
+            <%= link_to post, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'delete' do %>
+              <i class="far fa-trash-alt"></i>
+            <% end %>
+          </div>
         </p>
       </div>
       <br>
     <% end %>
   
 
-
-
-
-
+  
