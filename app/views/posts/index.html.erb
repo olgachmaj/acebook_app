@@ -6,7 +6,9 @@
 <br><br>
     <% @posts.reverse_each do |post| %>
       <div class="feed">
-        <p class="feedposts"><%= post.content %><br>
+        <p class="feedposts">
+          
+          <%= post.content %><br>
           <%= post.created_at.to_s(:time) %><br>
           
           <div id='crud-icons'>
