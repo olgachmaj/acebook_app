@@ -23,7 +23,10 @@ class PostsController < ApplicationController
 
   # POST /posts or /posts.json
   def create
-    @post = Post.new(post_params)
+    # Adds a user_id to the post_params hash (hash which contains the content that the user input i.e. :content)
+    merge = post_params.merge(user_id: current_user.id, email: current_user.email)
+    # Stores the hash onto the posts table on the db via the Post object
+    @post = Post.new(merge)
 
     respond_to do |format|
       if @post.save
