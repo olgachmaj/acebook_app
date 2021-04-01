@@ -1,0 +1,77 @@
+  <section class='Form my-4 mx-5'>
+    <div class='container'>
+        <div class='row no-gutters'>
+            <div class='col-lg-5'>
+                <img src='https://bit.ly/3dgpmp0' class='img-fluid' >
+            </div>
+            <div class='col-lg-7 px-5 pt-5'>
+                <h1 class='font-weight-bold py-3'>Welcome to Acebook</h1>
+                <p class="lead">Where you can connect and share with the people in your life.</p>
+                <p class="lead"> Please login or sign up! <p>
+                <form action="/session" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="08LNd8FMUzkt_I_25E3DJ26h7rhI1AteuOvfTX2qL7SavrzDR1S07S6Q5CezDFDsV9sNngC9U0hcIIFVCJb3dw">
+                    
+                    <div class='form-row' >
+                        <div class='col-lg-7' >
+                            <input type="email" name="session[email]" id="session_email" placeholder="Email" class="form-control my-3 p-4" >
+                        </div>
+                    </div>
+
+                    <div class='form-row'>
+                        <div class='col-lg-7'>
+                            <input type="password" name="session[password]" id="session_password" placeholder="Password" class="form-control my-3 p-4">
+                        </div>
+                    </div>
+
+                    <div class='form-row'>
+                        <div class='col-lg-7'>
+                            <input type="submit" name="commit" data-disable-with="Sign in" class='btn1 mt-3 mb-5' value='Log in' href='/posts/new'>
+                        </div>
+                    </div> 
+                </form>      
+
+                <div class='form-row'>
+                    <div class='col-lg-7'>
+                        <p class="text-center"><a href="/passwords/new">Forgot password?</a></p> 
+                        <button class="btn1" href= '/sign_up'>Create an Account</button></p>
+                    </div>
+                </div>
+            </div>          
+        </div>
+    </div>
+</section>
+
+
+<style>
+
+    /* body {
+        padding: 10;
+        background: white;
+        position: relative; 
+    } */
+    .row {
+        background: white;
+        border-radius: 30px;
+        box-shadow: 12px 12px 32px #343a40;
+    }
+    img {
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+        min-height: 600px;
+    }
+    .btn1 {
+        border: none;
+        outline: none;
+        height: 50px;
+        width: 100%;
+        background-color: #343a40; 
+        border-radius: 4px;
+        color: white;
+        font-weight: bold;   
+    }
+    .btn1:hover { 
+       background: white;
+       border: 1px solid;
+       color: #343a40;
+    }
+
+</style>

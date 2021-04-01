@@ -2,29 +2,36 @@
 
 <h1>Posts</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @posts.each do |post| %>
-    <tr>
-      <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
-      <td><%= post.title %></td>
-      <td><%= post.content %></td>
-      <td><%= link_to 'Show', post %></td>
-      <td><%= link_to 'Edit', edit_post_path(post) %></td>
-      <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
-
 <br>
-
 <%= link_to 'New Post', new_post_path %>
+<br><br>
+    <% @posts.reverse_each do |post| %>
+      <div class="feed">
+        <p class="feedposts">
+          
+          <%= post.content %><br>
+          <%= post.created_at.to_s(:time) %><br>
+          
+          <div id='crud-icons'>
+            <%= link_to post do %>
+              <i class="far fa-eye"></i>
+            <% end %>
+          
+          
+          
+            <%= link_to edit_post_path(post) do %>
+              <i class="far fa-edit"></i>
+            <% end %>
+          
+            <%= link_to post, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'delete' do %>
+              <i class="far fa-trash-alt"></i>
+            <% end %>
+            
+            <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+            
+          </div>
+        </p>
+      </div>
+      <br>
+    <% end %>
+ 
