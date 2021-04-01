@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Posts</h1>
+
 <br>
 <%= link_to 'New Post', new_post_path %>
 <br><br>
@@ -25,11 +26,12 @@
             <%= link_to post, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'delete' do %>
               <i class="far fa-trash-alt"></i>
             <% end %>
+            
+            <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+            
           </div>
         </p>
       </div>
       <br>
     <% end %>
-  
-
-  
+ 
